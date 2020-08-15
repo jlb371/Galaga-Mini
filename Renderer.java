@@ -6,6 +6,9 @@ import java.awt.GraphicsConfiguration;
 import java.awt.image.VolatileImage;
 import java.awt.Graphics;
 import java.awt.Color;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 
 public class Renderer {
 
@@ -94,9 +97,7 @@ public class Renderer {
           Graphics g = v_image.getGraphics();
           g.setColor(Color.black);
           g.fillRect(0, 0, screen_width, screen_height);
-
-          g.setColor(Color.red);
-          g.drawString(String.valueOf(current_fps), 10, game_height - 10);
+          World.render(g);
           g.dispose();
 
           g = canvas.getGraphics();
@@ -108,5 +109,13 @@ public class Renderer {
     };
 
     thread.start();
+  }
+
+  public static BufferedImage loadImage (String path) throws IOException {
+    BufferedImage raw_image = ImageIO.read(Renderer.class.getResource(path));
+    BufferedImage final_image = canvas.getGraphicsConfiguration().createCompatibleImage(raw_image.getWidth(), raw_image.getHeight(), raw_image.getTransparency());
+
+    final_image.getGraphics().drawImage(raw_image, 0, 0, raw_image.getWidth(), raw_image.getHeight(), null);
+    return final_image;
   }
 } //end Renderer
