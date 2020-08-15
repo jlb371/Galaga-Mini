@@ -97,6 +97,7 @@ public class Renderer {
           Graphics g = v_image.getGraphics();
           g.setColor(Color.black);
           g.fillRect(0, 0, screen_width, screen_height);
+          World.update();
           World.render(g);
           g.dispose();
 

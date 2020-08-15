@@ -10,4 +10,8 @@ public class TestSprite extends Sprite {
       e.printStackTrace();
     }
   }
+
+  public void update (float delta_time) {
+    pos_x += 10 * delta_time;
+  }
 }

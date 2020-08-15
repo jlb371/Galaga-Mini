@@ -13,14 +13,14 @@ public class Sprite {
   }
 
   public void update(float delta_time) {
-
+    
   }
   public void render(Graphics g) {
 
     if(image == null) {
       return;
     }
-    
+
     int real_x = (int)pos_x - (image.getWidth() / 2);
     int real_y = (int)pos_y - (image.getHeight() / 2);
 
