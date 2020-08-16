@@ -72,6 +72,7 @@ public class Renderer {
     frame.add(canvas);
     frame.setVisible(true);
 
+    canvas.addKeyListener(new Input());
     startRendering();
   } //end init()
 
