@@ -8,14 +8,7 @@ public class Main {
     Renderer.init();
 
     World.curr_world = new World();
-    World.curr_world.sprites.add(new TestSprite(100, 100));
-
-    try {
-      BufferedImage image = Renderer.loadImage("/Sprite/user_ship.png");
-      System.out.println(image);
-    } catch(IOException e) {
-      e.printStackTrace();
-    }
+    World.curr_world.add_sprites.add(new Player(675, 850));
   }
 
   public static void quit() {
