@@ -62,6 +62,7 @@ public class Renderer {
           g.setColor(Color.black);
           g.fillRect(0, 0, screen_width, screen_height);
           World.update();
+          Input.cleanUp();
           World.render(g);
           g.dispose();
 

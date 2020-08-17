@@ -4,10 +4,9 @@ import java.io.IOException;
 
 public class User_Bullet extends Mob {
 
-  float bullet_speed = 800.0f;
-
   public User_Bullet(float pos_x, float pos_y) {
     super(pos_x, pos_y);
+    user_speed = 1200.0f;
     width = 10;
     height = 10;
 
@@ -21,7 +20,7 @@ public class User_Bullet extends Mob {
 
 @Override
   public void update(float delta_time) {
-    pos_y -= bullet_speed * delta_time;
+    pos_y -= user_speed * delta_time;
   }
 
 @Override

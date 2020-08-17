@@ -44,7 +44,7 @@ public class Player extends Mob {
       pos_y += move_y * delta_time;
     }
 
-    if (Input.getKey(KeyEvent.VK_SPACE)) {
+    if (Input.getKeyUp(KeyEvent.VK_SPACE)) {
       User_Bullet bullet = new User_Bullet(pos_x, pos_y);
       World.curr_world.addSprite(bullet);
     }
