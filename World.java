@@ -1,5 +1,6 @@
 import java.awt.Graphics;
 import java.util.*;
+import java.util.Random;
 
 public class World {
 
@@ -9,10 +10,12 @@ public class World {
   public ArrayList<Sprite> remove_sprites = new ArrayList<Sprite>();
 
   private static long last_time = System.nanoTime();
+  private static Random rand = new Random();
 
   public static void update() {
     float delta_time = (System.nanoTime() - last_time) / 1000000000.0f;
     last_time = System.nanoTime();
+
     for(Sprite sprite : curr_world.sprites) {
       sprite.update(delta_time);
     }
